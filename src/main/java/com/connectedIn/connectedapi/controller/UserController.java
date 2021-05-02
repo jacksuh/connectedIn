@@ -1,13 +1,14 @@
 package com.connectedIn.connectedapi.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.connectedIn.connectedapi.controller.request.UserRequest;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
-    @GetMapping("/")
-    public void hello(){
+    @PostMapping
+    public String create(@RequestBody UserRequest userRequest){
         return "Hello World";
     }
 }
