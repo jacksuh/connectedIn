@@ -9,6 +9,7 @@ public class UserController {
 
     @PostMapping
     public String create(@RequestBody UserRequest userRequest){
+        System.out.println("User: " + userRequest);
         return "Hello World";
     }
 }
