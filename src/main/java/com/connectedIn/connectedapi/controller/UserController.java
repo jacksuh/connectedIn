@@ -1,5 +1,6 @@
 package com.connectedIn.connectedapi.controller;
 
+import com.connectedIn.connectedapi.model.User;
 import com.connectedIn.connectedapi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,15 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public String create(@RequestBody UserRequest userRequest){
-        System.out.println("User: " + userRequest);
-        return "Hello World";
+    public User create(@RequestBody UserRequest userRequest){
+        User user = userService.create(User.builder()
+                .name(userRequest.getName())
+                .username(userRequest.getUsername())
+                .lastName(userRequest.getLastName())
+                .email(userRequest.getEmail())
+                .password(userRequest.getPassword())
+                .born(userRequest.getBorn())
+                .build());
+        return user;
     }
 }

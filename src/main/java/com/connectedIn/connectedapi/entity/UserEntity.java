@@ -1,5 +1,6 @@
 package com.connectedIn.connectedapi.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "users")
 public class UserEntity {
