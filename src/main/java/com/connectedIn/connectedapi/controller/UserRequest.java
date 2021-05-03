@@ -1,4 +1,4 @@
-package com.connectedIn.connectedapi.controller.request;
+package com.connectedIn.connectedapi.controller;
 
 import lombok.Getter;
 import lombok.Setter;
